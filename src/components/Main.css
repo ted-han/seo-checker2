@@ -1,0 +1,114 @@
+header {
+  background-color: #f9f9f9;
+  font-size: 2em;
+  margin: 2em 0;
+  font-weight: bold;
+  text-align: center;
+}
+h1 {
+  line-height: 0;
+}
+.done {
+  background: gold;
+  animation-name: move;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes move {
+  to {
+    margin: 0;
+  }
+}
+
+header a {
+  text-decoration: none;
+}
+
+span:nth-child(1) {
+  color: #ea4335;
+}
+span:nth-child(2) {
+  color: #4285f4;
+}
+span:nth-child(3) {
+  color: #fbbc05;
+}
+span:nth-child(5) {
+  color: #34a853;
+}
+span:nth-child(6) {
+  color: #ea4335;
+}
+span:nth-child(7) {
+  color: #4285f4;
+}
+span:nth-child(8) {
+  color: #fbbc05;
+}
+span:nth-child(9) {
+  color: #34a853;
+}
+span:nth-child(10) {
+  color: #ea4335;
+}
+span:nth-child(11) {
+  color: #4285f4;
+}
+
+span {
+  transition-property: color;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+
+span:hover {
+  color: black;
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+
+.input-box {
+  background-color: #f9f9f9;
+  width: 40%;
+  margin: 0 auto;
+}
+.SeoForm {
+  padding: 2rem;
+  display: flex;
+}
+
+.SeoForm input {
+  /* 스타일 초기화 */
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 0.5rem;
+
+  flex: 1;
+  border-bottom: 1px solid #343a40;
+  color: #343a40;
+  font-size: 1.25rem;
+}
+.SeoForm input::placeholder {
+  color: #c1c7cd;
+  font-size: 1.1rem;
+}
+
+.SeoForm button {
+  /* 스타일 초기화 */
+  background: transparent;
+  border: none;
+  outline: none;
+
+  margin-left: 1rem;
+  padding: 0.5rem;
+  background: #4285f4;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+}
+
+.SeoForm button:hover {
+  background: #34a853;
+}
