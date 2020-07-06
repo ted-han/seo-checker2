@@ -1,8 +1,14 @@
 import React from 'react';
-import SeoChecker from './components/SeoChecker';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
-  return <SeoChecker />;
+  return (
+    <>
+      <Main />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
