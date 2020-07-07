@@ -4,32 +4,67 @@
 }
 
 .ResultTop {
+  margin: 4em 0;
+}
+
+.ResultTop .progressContent {
+  margin: 1em 0;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.ResultTop .head {
-  background-color: white;
-  flex-basis: 20%;
-  padding: 1em;
-  margin: 1rem 0.7em;
+.ResultTop .progressContent .name {
+  width: 25%;
+  /* flex-grow: 1; */
+}
+.ResultTop .progressContent .value {
   text-align: center;
+  width: 30%;
+  /* flex-grow: 2; */
 }
 
-.ResultTop .head .name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-}
-
-.ResultTop .head .desc {
+.ResultTop .desc {
   font-size: 0.8rem;
-  color: black;
+}
+
+progress {
+  width: 100%;
+  height: 0.6rem;
+  -webkit-appearance: none;
+  appearance: none;
+  /* flex-grow: 4; */
+}
+.good::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; */
+}
+.good::-webkit-progress-value {
+  background-color: #34a853;
+  border-radius: 2px;
+}
+.normal::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; */
+}
+.normal::-webkit-progress-value {
+  background-color: #fbbc05;
+  border-radius: 2px;
+}
+.bad::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; */
+}
+.bad::-webkit-progress-value {
+  background-color: #ea4335;
+  border-radius: 2px;
 }
 
 .ResultBottom {
-  margin-top: 3em;
+  margin: 4em 0 6em 0;
   text-align: center;
   border-radius: 10px;
   overflow: auto;
@@ -47,7 +82,7 @@
   background-color: white;
 }
 .ResultBottom th {
-  background-color: #34a853;
+  background-color: #4285f4;
   color: white;
   height: 20px;
   padding: 5px;

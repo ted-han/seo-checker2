@@ -4,12 +4,11 @@ import './Result.css';
 let data = {
   topData: [
     { name: 'H1', one: 10, total: 10, desc: 'pages' },
-    { name: 'Open Graph', one: 9, total: 10, desc: 'pages' },
-    { name: 'Meta Description', one: 8, total: 10, desc: 'pages' },
-    { name: 'Canonical Tag', one: 10, total: 10, desc: 'pages' },
-    { name: 'Broken Link', one: 3, total: 50, desc: 'links' },
-    { name: 'Loading Time', one: 0, total: 1.2, desc: 'sec' },
-    { name: 'Title', one: 0, total: 3, desc: 'duplication' },
+    { name: 'Open Graph', one: 6, total: 10, desc: 'pages' },
+    { name: 'Meta Description', one: 5, total: 10, desc: 'pages' },
+    { name: 'Canonical Tag', one: 4, total: 10, desc: 'pages' },
+    { name: 'Broken Link', one: 43, total: 50, desc: 'links' },
+    { name: 'AVG Loading Time', one: 0, total: 12.2, desc: 'sec' },
   ],
   bottomData: [
     {
@@ -69,13 +68,41 @@ const ResultTop = () => {
   return (
     <div className="ResultTop">
       {data.topData.map((value, idx) => (
-        <div className="head" key={idx}>
-          <div className="name">{value.name}</div>
-          <div>
-            {value.one === 0 ? `${value.total}` : `${value.one}/${value.total}`}
-            <span className="desc"> {value.desc}</span>
-          </div>
-        </div>
+        <>
+          {value.one === 0 ? (
+            <div className="progressContent">
+              <div className="name">{value.name}</div>
+              <progress
+                className={parseInt(value.total) > 3 ? 'bad' : 'good'}
+                value={1}
+                max={1}
+              ></progress>
+              <div className="value">
+                {value.total}
+                <span className="desc"> {value.desc}</span>
+              </div>
+            </div>
+          ) : (
+            <div className="progressContent">
+              <div className="name">{value.name}</div>
+              <progress
+                className={
+                  (parseInt(value.one) / parseInt(value.total)) * 100 >= 70
+                    ? 'good'
+                    : parseInt((value.one / value.total) * 100) > 50
+                    ? 'normal'
+                    : 'bad'
+                }
+                value={value.one}
+                max={value.total}
+              ></progress>
+              <div className="value">
+                {value.one}/{value.total}
+                <span className="desc"> {value.desc}</span>
+              </div>
+            </div>
+          )}
+        </>
       ))}
     </div>
   );
@@ -132,7 +159,10 @@ const ResultBottom = () => {
 };
 
 const Result = ({ resData }) => {
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@');
   console.log(resData);
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@');
+
   return (
     <div className="Result">
       <ResultTop />
